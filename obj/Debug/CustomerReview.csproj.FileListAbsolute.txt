@@ -1,0 +1,15 @@
+C:\Users\dell\source\repos\CustomerReview\bin\Debug\CustomerReview.exe.config
+C:\Users\dell\source\repos\CustomerReview\bin\Debug\CustomerReview.exe
+C:\Users\dell\source\repos\CustomerReview\bin\Debug\CustomerReview.pdb
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.csprojAssemblyReference.cache
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.Properties.Resources.resources
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.ReviewForm.resources
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.csproj.GenerateResource.cache
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.csproj.CoreCompileInputs.cache
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.exe
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.pdb
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.LoginForm.resources
+C:\Users\dell\source\repos\CustomerReview\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dell\source\repos\CustomerReview\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.AdminPanel.resources
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.csproj.CopyComplete
