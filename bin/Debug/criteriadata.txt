@@ -1,0 +1,6 @@
+{"Criteria":"Food Quality"},
+{"Criteria":"Staff Friendliness"},
+{"Criteria":"Cleanliness"},
+{"Criteria":"Order Accuracy"},
+{"Criteria":"Restaurant Ambiance"},
+{"Criteria":"Value of Money"},

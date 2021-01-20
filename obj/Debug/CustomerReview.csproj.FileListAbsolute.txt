@@ -13,3 +13,6 @@ C:\Users\dell\source\repos\CustomerReview\bin\Debug\Newtonsoft.Json.dll
 C:\Users\dell\source\repos\CustomerReview\bin\Debug\Newtonsoft.Json.xml
 C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.AdminPanel.resources
 C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.csproj.CopyComplete
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.AddCriteria.resources
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.Graph.resources
+C:\Users\dell\source\repos\CustomerReview\obj\Debug\CustomerReview.Home.resources

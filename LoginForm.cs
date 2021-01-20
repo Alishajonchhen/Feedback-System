@@ -25,20 +25,23 @@ namespace CustomerReview
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\dell\OneDrive\Documents\AdminData.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from AdminTable where Username='"+ UsernameTxt.Text + "'and Password='"+ PasswordTxt.Text +"'",con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-
-            if(dt.Rows[0][0].ToString()=="1")
+           if (UsernameTxt.Text=="" && PasswordTxt.Text=="")
             {
-                this.Hide();
-                AdminPanel ss = new AdminPanel();
-                ss.Show();
+                MessageBox.Show("Please Enter Username and Password!");
             }
             else
             {
-                MessageBox.Show("Invalid Username or Password.");
+                if(UsernameTxt.Text=="admin" && PasswordTxt.Text=="admin")
+                {
+                    this.Hide();
+                    Home ap = new Home();
+                    ap.Show();
+               
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password!");
+                }
             }
             
         }

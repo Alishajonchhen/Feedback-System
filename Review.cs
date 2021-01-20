@@ -9,7 +9,7 @@ namespace CustomerReview
 {
     public class Review
     {
-        public string Criteria { get; set; }
+        
     }
 
 }

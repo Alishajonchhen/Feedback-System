@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace CustomerReview
@@ -15,79 +17,32 @@ namespace CustomerReview
         public ReviewForm()
         {
             InitializeComponent();
+            timer1.Start();
+            //Update data grid view
+            update();
         }
 
         //click event to submit form
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-           if(btnSend.Text=="Send Feedback")
+            if (btnSend.Text == "Send Feedback")
             {
-                if (cmbFood.SelectedItem != null)
-                {
-                    if (cmbStaff.SelectedItem != null)
-                    {
-                        if (cmbClean.SelectedItem != null)
-                        {
-                            if (cmbAccuracy.SelectedItem != null)
-                            {
-                                if (cmbAmbiance.SelectedItem != null)
-                                {
-                                    if (cmbMoney.SelectedItem != null)
-                                    {
-                                        Panel r = new Panel(); // creating object for class Panel
-                                        r.CustomerName = txtName.Text;
-                                        r.CustomerNumber = txtNumber.Text;
-                                        r.CustomerEmail = txtEmail.Text;
-                                        r.FoodQuality = (string)cmbFood.SelectedItem;
-                                        r.StaffFriendliness = (string)cmbStaff.SelectedItem;
-                                        r.Cleanliness = (string)cmbClean.SelectedItem;
-                                        r.OrderAccuracy = (string)cmbAccuracy.SelectedItem;
-                                        r.RestAmbiance = (string)cmbAmbiance.SelectedItem;
-                                        r.ValueMoney = (string)cmbMoney.SelectedItem;
+                Panel r = new Panel(); // creating object for class Panel
+                r.CustomerName = txtName.Text;
+                r.CustomerNumber = txtNumber.Text;
+                r.CustomerEmail = txtEmail.Text;
+                r.Suggestion = txtSuggest.Text;
+                r.Timer = time.Text;
+                
+                string flag = r.Save(r);
 
-                                        string flag = r.Save(r);
+                ClearForm();
 
-                                        ClearForm();
+                string title = "Message";
+                MessageBox.Show("Record added successfully.", title);
 
-                                        string title = "Message";
-                                        MessageBox.Show("Record added successfully.", title);
-                                    }
-                                    else
-                                    {
-                                        string title = "Alert";
-                                        MessageBox.Show("Value of Money field cannot be empty!", title);
-                                    }
-                                }
-                                else
-                                {
-                                    string title = "Alert";
-                                    MessageBox.Show("Restuarant Ambiance field cannot be empty!", title);
-                                }
-                            }
-                            else
-                            {
-                                string title = "Alert";                           
-                                MessageBox.Show("Order Accuracy field cannot be empty!", title);
-                            }
-                        }
-                        else 
-                        {
-                            string title = "Alert";
-                            MessageBox.Show("Cleanliness field cannot be empty!", title);
-                        }
-                    }
-                    else
-                    {
-                        string title = "Alert";
-                        MessageBox.Show("Staff Friendliness field cannot be empty!", title);
-                    }
-                }
-                else
-                {
-                    string title = "Alert";
-                    MessageBox.Show("Food Quality field cannot be empty!", title);
-                }
-           }
+
+            }
         }
 
         private void ClearForm()
@@ -95,29 +50,71 @@ namespace CustomerReview
             txtName.Text = "";
             txtNumber.Text = "";
             txtEmail.Text = "";
-            cmbFood.SelectedIndex = -1;
-            cmbStaff.SelectedIndex = -1;
-            cmbClean.SelectedIndex = -1;
-            cmbAccuracy.SelectedIndex = -1;
-            cmbAmbiance.SelectedIndex = -1;
-            cmbMoney.SelectedIndex = -1;
+            txtSuggest.Text = "";
+
+            
         }
 
 
         private void AdminLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //navigating to another login window
             LoginForm lf = new LoginForm();
             lf.Show();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            //clearing the fields
             ClearForm();
+            
         }
 
         private void ReviewForm_Load(object sender, EventArgs e)
         {
-            label10.Text = AdminPanel.SetValueForText1;
+           
+        }
+
+        public void update()
+        {
+            ArrayList feedback = new ArrayList();
+            feedback.Add("Excellent");
+            feedback.Add(" Very Good");
+            feedback.Add("Good");
+            feedback.Add("Satisfied");
+            feedback.Add("Dissatisfied");
+
+            Requirements obj = new Requirements();
+            List<Requirements> criteria = obj.List();
+            DataTable dt = Utility.ConvertToDataTable(criteria);
+
+            CustomerGrid.DataSource = dt;
+            
+            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+            cmb.HeaderText = "Ratings";
+            cmb.Name = "Ratings";
+            cmb.Items.AddRange(feedback.ToArray());
+            CustomerGrid.Columns.Add(cmb);
+
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime dateTime = DateTime.Now;
+            this.time.Text = dateTime.ToString();
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void time_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

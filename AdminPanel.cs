@@ -12,10 +12,13 @@ namespace CustomerReview
 {
     public partial class AdminPanel : Form
     {
+        public static string Criteria { get; set; }
+        
         public AdminPanel()
         {
             InitializeComponent();
             BindGrid();
+           
         }
 
         private void gridReview_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,13 +34,27 @@ namespace CustomerReview
             //BindChart(listReview);
         }
 
-        public static string SetValueForText1 = "";
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void AdminPanel_Load(object sender, EventArgs e)
         {
-            Review add = new Review();
-            SetValueForText1=txtCriteria.Text;
-           
+
+        }
+
+        private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Panel obj = new Panel();
+            List<Panel> listofcstm = obj.List();
+            if (comboBox1.SelectedItem.ToString() == "Customer Name")
+            {
+                List<Panel> list = obj.SortingByName(listofcstm);
+                DataTable dt = Utility.ConvertToDataTable(list);
+                gridReview.DataSource = dt;
+
+            }
         }
     }
 }
