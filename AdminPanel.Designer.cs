@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridReview = new System.Windows.Forms.DataGridView();
             this.Sort = new System.Windows.Forms.Label();
             this.cmbSort = new System.Windows.Forms.ComboBox();
-            this.llbSort = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gridReview)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridReview
-            // 
-            this.gridReview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridReview.Location = new System.Drawing.Point(18, 61);
-            this.gridReview.Name = "gridReview";
-            this.gridReview.Size = new System.Drawing.Size(536, 269);
-            this.gridReview.TabIndex = 0;
-            this.gridReview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridReview_CellContentClick);
             // 
             // Sort
             // 
@@ -67,27 +57,24 @@
             this.cmbSort.TabIndex = 6;
             this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
             // 
-            // llbSort
+            // dataGridView1
             // 
-            this.llbSort.AutoSize = true;
-            this.llbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llbSort.Location = new System.Drawing.Point(352, 33);
-            this.llbSort.Name = "llbSort";
-            this.llbSort.Size = new System.Drawing.Size(61, 18);
-            this.llbSort.TabIndex = 7;
-            this.llbSort.Text = "Sort By:";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(38, 67);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(518, 257);
+            this.dataGridView1.TabIndex = 9;
             // 
-            // comboBox1
+            // label1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Customer Name"});
-            this.comboBox1.Location = new System.Drawing.Point(419, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(38, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Details of Customers";
             // 
             // AdminPanel
             // 
@@ -95,26 +82,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(708, 360);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.llbSort);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmbSort);
             this.Controls.Add(this.Sort);
-            this.Controls.Add(this.gridReview);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             this.Load += new System.EventHandler(this.AdminPanel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridReview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView gridReview;
         private System.Windows.Forms.Label Sort;
         private System.Windows.Forms.ComboBox cmbSort;
-        private System.Windows.Forms.Label llbSort;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
     }
 }

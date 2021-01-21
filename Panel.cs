@@ -10,13 +10,12 @@ namespace CustomerReview
     class Panel
     {
         private string _path = "Review.txt";
-        public string CustomerName { get; set; }
-        public string CustomerNumber { get; set; }
-        public string CustomerEmail { get; set; }
-        public string Suggestion { get; set;}
-        public string Timer { get; set; }
-        
-     
+        public string reviewername { get; set; }
+        public string reviewerphone { get; set; }
+        public string revieweremail { get; set; }
+        public string reviewersuggest { get; set;}
+        public string timer { get; set; }
+       
         public String Save(Panel data)
         {
             string str = JsonConvert.SerializeObject(data, Formatting.None);
@@ -48,27 +47,27 @@ namespace CustomerReview
                 {
                     for (int b = a + 1; b < list.Count; b++)
                     {
-                        if (list[a].CustomerName.ToUpper().CompareTo(list[b].CustomerName.ToUpper()) >0)
+                        if (list[a].reviewername.ToUpper().CompareTo(list[b].reviewername.ToUpper()) >0)
                         {
-                            CstmName = list[a].CustomerName;
-                            list[a].CustomerName = list[b].CustomerName;
-                            list[b].CustomerName = CstmName;
+                            CstmName = list[a].reviewername;
+                            list[a].reviewername = list[b].reviewername;
+                            list[b].reviewername = CstmName;
 
-                            CstmNumber = list[a].CustomerNumber;
-                            list[a].CustomerNumber = list[b].CustomerNumber;
-                            list[b].CustomerNumber = CstmNumber;
+                            CstmNumber = list[a].reviewerphone;
+                            list[a].reviewerphone = list[b].reviewerphone;
+                            list[b].reviewerphone = CstmNumber;
 
-                            CstmEmail = list[a].CustomerEmail;
-                            list[a].CustomerEmail = list[b].CustomerEmail;
-                            list[b].CustomerEmail = CstmEmail;
+                            CstmEmail = list[a].revieweremail;
+                            list[a].revieweremail = list[b].revieweremail;
+                            list[b].revieweremail = CstmEmail;
 
-                            suggest = list[a].Suggestion;
-                            list[a].Suggestion = list[b].Suggestion;
-                            list[b].Suggestion = suggest;
+                            suggest = list[a].reviewersuggest;
+                            list[a].reviewersuggest = list[b].reviewersuggest;
+                            list[b].reviewersuggest = suggest;
 
-                            time = list[a].Timer;
-                            list[a].Timer = list[b].Timer;
-                            list[b].Timer = time;
+                            time = list[a].timer;
+                            list[a].timer = list[b].timer;
+                            list[b].timer = time;
                         }
                     }
                 }
@@ -77,4 +76,5 @@ namespace CustomerReview
             return null;
         }
     }
+ 
 }

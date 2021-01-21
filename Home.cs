@@ -45,5 +45,13 @@ namespace CustomerReview
         {
             openChildForm(new AddCriteria());
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
+            LoginForm login = new LoginForm();
+            login.Show();
+        }
     }
 }

@@ -48,6 +48,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.CustomerGrid = new System.Windows.Forms.DataGridView();
+            this.txtresult = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerGrid)).BeginInit();
@@ -87,22 +88,25 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(171, 133);
+            this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(208, 20);
+            this.txtName.Size = new System.Drawing.Size(208, 25);
             this.txtName.TabIndex = 9;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(171, 242);
+            this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(208, 20);
+            this.txtEmail.Size = new System.Drawing.Size(208, 25);
             this.txtEmail.TabIndex = 15;
             // 
             // txtNumber
             // 
             this.txtNumber.Location = new System.Drawing.Point(171, 187);
+            this.txtNumber.Multiline = true;
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(208, 20);
+            this.txtNumber.Size = new System.Drawing.Size(208, 25);
             this.txtNumber.TabIndex = 16;
             // 
             // btnClear
@@ -110,7 +114,7 @@
             this.btnClear.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(736, 347);
+            this.btnClear.Location = new System.Drawing.Point(734, 427);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(86, 32);
             this.btnClear.TabIndex = 23;
@@ -123,7 +127,7 @@
             this.btnSend.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.White;
-            this.btnSend.Location = new System.Drawing.Point(565, 347);
+            this.btnSend.Location = new System.Drawing.Point(565, 427);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(142, 32);
             this.btnSend.TabIndex = 24;
@@ -137,7 +141,7 @@
             this.AdminLink.AutoSize = true;
             this.AdminLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminLink.LinkColor = System.Drawing.Color.DarkRed;
-            this.AdminLink.Location = new System.Drawing.Point(306, 365);
+            this.AdminLink.Location = new System.Drawing.Point(290, 442);
             this.AdminLink.Name = "AdminLink";
             this.AdminLink.Size = new System.Drawing.Size(89, 18);
             this.AdminLink.TabIndex = 25;
@@ -175,7 +179,7 @@
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 393);
+            this.panel1.Size = new System.Drawing.Size(417, 476);
             this.panel1.TabIndex = 29;
             // 
             // panel2
@@ -190,16 +194,17 @@
             // 
             // txtSuggest
             // 
-            this.txtSuggest.Location = new System.Drawing.Point(171, 297);
+            this.txtSuggest.Location = new System.Drawing.Point(171, 295);
+            this.txtSuggest.Multiline = true;
             this.txtSuggest.Name = "txtSuggest";
-            this.txtSuggest.Size = new System.Drawing.Size(208, 20);
+            this.txtSuggest.Size = new System.Drawing.Size(208, 60);
             this.txtSuggest.TabIndex = 18;
             // 
             // lblSuggest
             // 
             this.lblSuggest.AutoSize = true;
             this.lblSuggest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuggest.Location = new System.Drawing.Point(26, 298);
+            this.lblSuggest.Location = new System.Drawing.Point(22, 295);
             this.lblSuggest.Name = "lblSuggest";
             this.lblSuggest.Size = new System.Drawing.Size(98, 20);
             this.lblSuggest.TabIndex = 17;
@@ -227,6 +232,10 @@
             // 
             // CustomerGrid
             // 
+            this.CustomerGrid.AllowUserToAddRows = false;
+            this.CustomerGrid.AllowUserToDeleteRows = false;
+            this.CustomerGrid.AllowUserToResizeColumns = false;
+            this.CustomerGrid.AllowUserToResizeRows = false;
             this.CustomerGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CustomerGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomerGrid.Location = new System.Drawing.Point(470, 97);
@@ -234,12 +243,21 @@
             this.CustomerGrid.Size = new System.Drawing.Size(457, 220);
             this.CustomerGrid.TabIndex = 31;
             // 
+            // txtresult
+            // 
+            this.txtresult.Location = new System.Drawing.Point(534, 323);
+            this.txtresult.Multiline = true;
+            this.txtresult.Name = "txtresult";
+            this.txtresult.Size = new System.Drawing.Size(320, 98);
+            this.txtresult.TabIndex = 31;
+            // 
             // ReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(972, 391);
+            this.ClientSize = new System.Drawing.Size(972, 477);
+            this.Controls.Add(this.txtresult);
             this.Controls.Add(this.CustomerGrid);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -279,6 +297,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView CustomerGrid;
+        private System.Windows.Forms.TextBox txtresult;
     }
 }
 

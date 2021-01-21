@@ -29,6 +29,32 @@ namespace CustomerReview
             }
             return null;
         }
+        
+
+        public List<Requirements> SortingByCriteria(List<Requirements> list)
+        {
+            string criteria;
+            
+
+            if (list != null)
+            {
+                for (int a = 0; a < list.Count - 1; a++)
+                {
+                    for (int b = a + 1; b < list.Count; b++)
+                    {
+                        if (list[a].Criteria.ToUpper().CompareTo(list[b].Criteria.ToUpper()) > 0)
+                        {
+                            criteria = list[a].Criteria;
+                            list[a].Criteria = list[b].Criteria;
+                            list[b].Criteria = criteria;
+
+                        }
+                    }
+                }
+                return list;
+            }
+            return null;
+        }
     }
 }
 

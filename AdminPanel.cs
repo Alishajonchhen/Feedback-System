@@ -11,21 +11,17 @@ using System.Windows.Forms;
 namespace CustomerReview
 {
     public partial class AdminPanel : Form
-    {
-        public static string Criteria { get; set; }
-        
+    {   
         public AdminPanel()
         {
             InitializeComponent();
-            BindGrid();
-           
         }
-
+        DataTable dataTable = new DataTable();
         private void gridReview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        private void BindGrid()
+        /*private void BindGrid()
         {
             Panel obj = new Panel();
             List<Panel> listReview = obj.List();
@@ -33,10 +29,36 @@ namespace CustomerReview
             gridReview.DataSource = dt;
             //BindChart(listReview);
         }
-
+        */
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-
+            int rowCount = dataGridView1.Rows.Count;
+            for (int i = 0; i < rowCount; i++)
+            {
+                if (dataGridView1.Rows[0].IsNewRow != true)
+                    dataGridView1.Rows.RemoveAt(0);
+            }
+            string[] allLines = System.IO.File.ReadAllLines("customerReviews.csv");
+            string[] headers = allLines[0].Split(',');
+            if (allLines.Length > 0)
+            {
+                foreach (string headerword in headers)
+                {
+                    dataTable.Columns.Add(headerword);
+                }
+                for (int i = 1; i <= allLines.Length - 1; i++)
+                {
+                    string[] dataWord = allLines[i].Split(',');
+                    DataRow row = dataTable.NewRow();
+                    int column = 0;
+                    foreach (string headerWord in headers)
+                    {
+                        row[headerWord] = dataWord[column++];
+                    }
+                    dataTable.Rows.Add(row);
+                }
+            }
+            dataGridView1.DataSource = dataTable;
         }
 
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,15 +68,8 @@ namespace CustomerReview
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Panel obj = new Panel();
-            List<Panel> listofcstm = obj.List();
-            if (comboBox1.SelectedItem.ToString() == "Customer Name")
-            {
-                List<Panel> list = obj.SortingByName(listofcstm);
-                DataTable dt = Utility.ConvertToDataTable(list);
-                gridReview.DataSource = dt;
-
-            }
+            
         }
+        
     }
 }
